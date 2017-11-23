@@ -1,0 +1,55 @@
+<p><strong>Class-based actors</strong><br>A class-based actor is a subtype of event_based_actor and must implement the pure virtual&#xA0;member function make_behavior returning the initial behavior.</p>
+<p>&#x539F;&#x8BDD;&#x544A;&#x8BC9;&#x6211;&#x4EEC;&#x4E24;&#x70B9;:1.&#x5FC5;&#x987B;&#x7EE7;&#x627F;&#x201C; event_based_actor&#x201D;&#x3002;</p>
+<p>&#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0; &#xA0;2.&#x91CD;&#x8F7D;make_behavior&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x8FD9;&#x4E2A;&#x521D;&#x59CB;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x7B2C;&#x4E00;&#x70B9;&#x5462;&#xFF0C;&#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5F88;&#x591A;&#x57FA;&#x672C;&#x7684;send&#xFF0C;&#x770B;&#x4E86;&#x4E00;&#x70B9;&#x70B9;&#x6E90;&#x7801;&#x53D1;&#x73B0;event_based_actor&#x95F4;&#x63A5;&#x7EE7;&#x627F;&#x4E86;&#x4E00;&#x4E2A;&#x53EB; localactor &#x7684;&#x7C7B;&#xFF0C;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x4EE5;&#x7C7B;&#x4E3A;&#x57FA;&#x7840;&#x6784;&#x9020;&#x7684;actor&#x7684;&#x7528;&#x6CD5;&#x53EF;&#x4EE5;&#x53BB;&#x91CC;&#x9762;&#x627E;&#xFF0C;&#x8FD8;&#x662F;&#x5F88;&#x65B9;&#x4FBF;&#x7684;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x7B2C;&#x4E8C;&#x70B9;&#xFF0C;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x8981;&#x6CE8;&#x610F;&#xFF0C;&#x4EE5;&#x51FD;&#x6570;&#x6765;&#x6784;&#x9020;&#x7684;actor&#xFF0C;&#x4F1A;&#x4F20;&#x5165;&#x53C2;&#x6570;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;main_behavior&#x662F;&#x4E0D;&#x7528;&#x53C2;&#x6570;&#x7684;&#x3002;</p>
+<p>&#x7B2C;&#x4E8C;&#x70B9;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x51FD;&#x6570;&#x6784;&#x9020;&#x7684;actor&#x53D1;&#x9001;&#x7ED9;&#x81EA;&#x5DF1;&#x6D88;&#x606F;&#x53EA;&#x9700;&#x8981;self&#x6765;&#x53EA;&#x5F85;&#x81EA;&#x5DF1;&#xFF0C;&#x5982;</p>
+<p>&#x3000;&#x3000;</p>
+<div class="cnblogs_code">
+<pre>self -&gt;send(self,<span style="color: #800000;">&quot;</span><span style="color: #800000;">hello</span><span style="color: #800000;">&quot;</span>);</pre>
+</div>
+<p>&#xA0;&#x73B0;&#x5728;&#x4E0D;&#x884C;&#x4E86;&#xFF0C;&#x81EA;&#x5DF1;&#x5C31;&#x60F3;&#x5230;&#x4E00;&#x79CD;&#x529E;&#x6CD5;&#x5C31;&#x662F;&#x5728;&#x7C7B;&#x5185;&#x58F0;&#x660E;&#x4E00;&#x4E2A;scoped_actor,&#x53D1;&#x9001;&#x7ED9;this&#x6307;&#x9488;(&#x5728;&#x672C;&#x5730;&#x53D1;&#x9001;&#x5E94;&#x8BE5;&#x662F;&#x7528;&#x6307;&#x9488;&#x7684;)&#x3002;</p>
+<div class="cnblogs_code">
+<pre>#include &lt;<span style="color: #0000ff;">string</span>&gt;<span style="color: #000000;">
+#include </span>&lt;iostream&gt;<span style="color: #000000;">
+#include </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">caf/io/all.hpp</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">
+#include </span><span style="color: #800000;">&quot;</span><span style="color: #800000;">caf/all.hpp</span><span style="color: #800000;">&quot;</span>
+<span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> std;
+</span><span style="color: #0000ff;">using</span> <span style="color: #0000ff;">namespace</span><span style="color: #000000;"> caf;
+
+</span><span style="color: #0000ff;">class</span> SlaveNodeActor : <span style="color: #0000ff;">public</span><span style="color: #000000;"> event_based_actor {
+ </span><span style="color: #0000ff;">public</span><span style="color: #000000;">:
+  behavior make_behavior() </span><span style="color: #0000ff;">override</span><span style="color: #000000;"> {
+<strong>    scoped_actor a;     
+    a</strong></span><strong>-&gt;send(<span style="color: #0000ff;">this</span>,<span style="color: #800000;">&quot;</span><span style="color: #800000;">hello</span><span style="color: #800000;">&quot;</span><span style="color: #000000;">);
+    </span></strong><span style="color: #0000ff;">return</span><span style="color: #000000;"> {
+        [</span>=](<span style="color: #0000ff;">const</span> <span style="color: #0000ff;">string</span>&amp;<span style="color: #000000;"> str ) {
+          cout </span>&lt;&lt; str &lt;&lt;<span style="color: #000000;"> endl;
+          quit();
+        },
+        caf::others </span>&gt;&gt; [=<span style="color: #000000;">]() {
+         cout </span>&lt;&lt; <span style="color: #800000;">&quot;</span><span style="color: #800000;">unkown message</span><span style="color: #800000;">&quot;</span> &lt;&lt;<span style="color: #000000;"> endl; 
+       } 
+    };
+  }
+};
+
+</span><span style="color: #0000ff;">int</span><span style="color: #000000;"> main(){
+  auto slave_actor </span>= caf::spawn&lt;SlaveNodeActor&gt;<span style="color: #000000;">();
+  caf::await_all_actors_done();
+  </span><span style="color: #0000ff;">return</span> <span style="color: #800080;">0</span><span style="color: #000000;">;
+}</span></pre>
+</div>
+<p>&#x7136;&#x540E;&#xFF0C;&#x6700;&#x8FD1;&#x5199;&#x4EE3;&#x7801;&#x53D1;&#x73B0;&#x8FD9;&#x6837;&#x4E00;&#x79CD;&#x7528;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x7C7B;A&#x5B58;&#x653E;&#x8FD9;actor&#x7684;&#x4FE1;&#x606F;&#x5982;IP&#xFF0C;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;actor&#x672C;&#x8EAB;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4EBA;&#x5C31;&#x9700;&#x8981;&#x59D3;&#x540D;&#xFF0C;&#x800C;&#x7C7B;B&#x7EE7;&#x627F;&#x4E86;event_based_actor&#xFF0C;&#x4F5C;&#x4E3A;&#x7C7B;A&#x7684;&#x53CB;&#x5143;&#x7C7B;&#x53BB;&#x8C03;&#x7528;A&#x7684;&#x4FE1;&#x606F;&#xFF0C;B&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x7C7B;A&#x7684;&#x6307;&#x9488;&#x5373;&#x53EF;&#xFF0C;A&#x8D1F;&#x8D23;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x63A7;&#x5236;actor&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
+<p>&#x8D34;&#x4E2A;&#x56FE;&#x7247;</p>
+<p><img src="http://images2015.cnblogs.com/blog/901129/201603/901129-20160309102334475-425009946.png" alt=""></p>
+<p><img src="http://images2015.cnblogs.com/blog/901129/201603/901129-20160309102556335-1556457654.png" alt="" width="853" height="412"></p>
+<p>&#xA0;</p>
+<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x63A7;&#x5236;&#xFF0C;&#x7C7B;A&#xFF08;SlaveNode &#x6700;&#x597D;&#x597D;&#x628A;actor&#x4F5C;&#x4E3A;&#x81EA;&#x5DF1;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x7136;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E0D;&#x65B9;&#x4FBF;&#xFF0C;&#x7528;&#x4E86;&#x5C31;&#x77E5;&#x9053;&#xFF0C;&#x4F60;&#x61C2;&#x5F97;&#x3002;&#xFF09;</p>
+<p>&#xA0;</p>
+<p>&#x4E4B;&#x540E;&#x53C8;&#x8BD5;&#x4E86;&#x4E00;&#x4E0B;&#xFF0C;&#x5176;&#x5B9E;&#x53EF;&#x4EE5;&#x628A;&#x4E0A;&#x9762;&#x751F;&#x6210;scoped_actor &#x53BB;&#x6389;&#xFF0C;</p>
+<p>&#x76F4;&#x63A5;&#x7528;</p>
+<p><img src="http://images2015.cnblogs.com/blog/901129/201603/901129-20160309140830960-734579782.png" alt=""></p>
+<p>&#x8FD9;&#x6837;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x529F;&#x80FD;&#x90FD;&#x662F;&#x4E00;&#x6837;&#x7684;&#x3002;&#xFF08;&#x4E4B;&#x524D;&#x6709;&#x4E9B;&#x7C97;&#x7CD9;&#x8BEF;&#x5BFC;&#x4E86;&#xFF09;</p>
+<p>&#xA0;</p>
+<p><span style="font-size: 18px;"><strong>&#x6700;&#x540E;&#x5F31;&#x5F31;&#x7684;&#x8BF4;&#x4E00;&#x53E5;&#xFF0C;&#x6C42;&#x4E92;&#x7C89;&#x963F;&#xFF01;</strong></span></p>

@@ -1,0 +1,259 @@
+<p>&#x4E00;&#x3001;&#x57FA;&#x7840;&#x4ECB;&#x7ECD;&#xFF1B;&#x4E8C;&#x3001;&#x57FA;&#x7840;&#x5C5E;&#x6027;</p>
+<p>&#x539F;&#x6587;&#x5730;&#x5740; :<a href="http://blog.csdn.net/dingkun520wy/article/details/50836780" target="_blank">http://blog.csdn.net/dingkun520wy/article/details/50836780</a></p>
+<p>&#xA0;</p>
+<p><strong>&#x4E00;&#x3001;&#x57FA;&#x7840;&#x4ECB;&#x7ECD;</strong></p>
+<p>&#xA0;</p>
+<p>ShakePosition: &#x6839;&#x636E;&#x63D0;&#x4F9B;&#x7684;amount&#x8870;&#x51CF;&#x5176;&#x503C;&#x968F;&#x673A;&#x6447;&#x52A8;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x4F4D;&#x7F6E;,&#x5176;&#x6643;&#x52A8;&#x5927;&#x5C0F;&#x548C;&#x65B9;&#x5411;&#x7531;&#x63D0;&#x4F9B;&#x7684;amount&#x51B3;&#x5B9A;</p>
+<p>&#xA0;</p>
+<p>ShakeRotation:</p>
+<p>&#xA0;&#x6839;&#x636E;&#x63D0;&#x4F9B;&#x7684;amount&#x8870;&#x51CF;&#x5176;&#x503C;&#x968F;&#x673A;&#x6446;&#x52A8;&#x65CB;&#x8F6C;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x89D2;&#x5EA6;,&#x5176;&#x8F6C;&#x52A8;&#x89D2;&#x5EA6;&#x5C31;&#x662F;X,Y,Z&#x7684;&#x503C;&#x7684;&#x5927;&#x5C0F;.</p>
+<p>&#xA0;</p>
+<p>&#xA0;</p>
+<p>ShakeScale:&#x6839;&#x636E;&#x63D0;&#x4F9B;&#x7684;amount&#x8870;&#x51CF;&#x5176;&#x503C;&#x968F;&#x673A;&#x6446;&#x52A8;&#x6539;&#x53D8;&#x6E38;&#x620F;&#x7269;&#x4F53;&#x7684;&#x5927;&#x5C0F;,&#x5176;&#x5927;&#x5C0F;&#x6BD4;&#x4F8B;&#x53D8;&#x5316;&#x65B9;&#x5411;&#x548C;&#x5927;&#x5C0F;&#x7531;&#x63D0;&#x4F9B;&#x7684;Vector3&#x51B3;&#x5B9A;.</p>
+<div>&#xA0;</div>
+<div><br>
+<p>&#xA0;</p>
+<p><strong>&#x4E8C;&#x3001;&#x57FA;&#x7840;&#x5C5E;&#x6027;</strong></p>
+<p>&#x57FA;&#x7840;&#x5C5E;&#x6027;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x76F4;&#x63A5;&#x4E0A;&#x4EE3;&#x7801;</p>
+<p>1,ShakePosition</p>
+<p>&#xA0;</p>
+<div class="dp-highlighter bg_csharp">
+<div class="bar">
+<div class="tools"><strong>[csharp]</strong>&#xA0;<a class="ViewSource" title="view plain" href="http://blog.csdn.net/dingkun520wy/article/details/50836780">view plain</a><span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_168">&#xA0;<a class="CopyToClipboard" title="copy" href="http://blog.csdn.net/dingkun520wy/article/details/50836780" target="_blank">copy</a></span></span>
+<div>&#xA0;</div>
+
+<span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_169">&#xA0;<span class="tracking-ad" data-mod="popu_167"><a title="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332" target="_blank"><img src="https://code.csdn.net/assets/CODE_ico.png" alt="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a><span class="tracking-ad" data-mod="popu_170"><a title="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332/fork" target="_blank"><img src="https://code.csdn.net/assets/ico_fork.svg" alt="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a></span></span></span></span></div>
+
+</div>
+<ol class="dp-c" start="1">
+<li class="alt"><span class="keyword">void&#xA0;Start&#xA0;()&#xA0;{&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x952E;&#x503C;&#x5BF9;&#x513F;&#x7684;&#x5F62;&#x5F0F;&#x4FDD;&#x5B58;iTween&#x6240;&#x7528;&#x5230;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Hashtable&#xA0;args&#xA0;=&#xA0;<span class="keyword">new&#xA0;Hashtable();&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x6447;&#x6446;&#x7684;&#x5E45;&#x5EA6;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;amount&quot;,&#xA0;new&#xA0;Vector3(5,&#xA0;5,&#xA0;5));&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;x&quot;,&#xA0;20);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;y&quot;,100);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;z&quot;,&#xA0;2);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x662F;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#x8FD8;&#x662F;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;islocal&quot;,&#xA0;<span class="keyword">true);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x6E38;&#x620F;&#x5BF9;&#x8C61;&#x662F;&#x5426;&#x5C06;&#x9762;&#x5411;&#x5176;&#x65B9;&#x5411;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;orienttopath&quot;,&#xA0;<span class="keyword">true);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x9762;&#x671D;&#x7684;&#x5BF9;&#x8C61;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;looktarget&quot;,&#xA0;new&#xA0;Vector3(1,&#xA0;1,&#xA0;1));&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;looktime&quot;,&#xA0;5.0f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7684;&#x6574;&#x4F53;&#x65F6;&#x95F4;&#x3002;&#x5982;&#x679C;&#x4E0E;speed&#x5171;&#x5B58;&#x90A3;&#x4E48;&#x4F18;&#x5148;speed&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;time&quot;,&#xA0;1f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;delay&quot;,&#xA0;0.1f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x4E09;&#x4E2A;&#x5FAA;&#x73AF;&#x7C7B;&#x578B;&#xA0;none&#xA0;loop&#xA0;pingPong&#xA0;(&#x4E00;&#x822C;&#xA0;&#x5FAA;&#x73AF;&#xA0;&#x6765;&#x56DE;)&#xA0;&#xA0;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;none&quot;);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;loop&quot;);&#xA0;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;loopType&quot;,&#xA0;iTween.LoopType.pingPong);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5904;&#x7406;&#x52A8;&#x753B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5F00;&#x59CB;&#x52A8;&#x753B;&#x65F6;&#x8C03;&#x7528;AnimationStart&#x65B9;&#x6CD5;&#xFF0C;5.0&#x8868;&#x793A;&#x5B83;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstart&quot;,&#xA0;<span class="string">&quot;AnimationStart&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstartparams&quot;,&#xA0;5.0f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x8BBE;&#x7F6E;&#x63A5;&#x53D7;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x81EA;&#x8EAB;&#x63A5;&#x53D7;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x522B;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x53D7;&#xFF0C;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x5728;&#x63A5;&#x6536;&#x5BF9;&#x8C61;&#x7684;&#x811A;&#x672C;&#x4E2D;&#x5B9E;&#x73B0;AnimationStart&#x65B9;&#x6CD5;&#x3002;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstarttarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncomplete&quot;,&#xA0;<span class="string">&quot;AnimationEnd&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompleteparams&quot;,&#xA0;<span class="string">&quot;end&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompletetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdate&quot;,&#xA0;<span class="string">&quot;AnimationUpdate&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdatetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdateparams&quot;,&#xA0;<span class="keyword">true);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;iTween.ShakePosition(btnBegin,&#xA0;args);&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationStart(<span class="keyword">float&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;start&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationEnd(<span class="keyword">string&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;end&#xA0;:&#xA0;&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationUpdate(<span class="keyword">bool&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;update&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+
+</ol></div>
+
+<br>2,ShakeRotation<br>
+<p>&#xA0;</p>
+<p>&#xA0;</p>
+<div class="dp-highlighter bg_csharp">
+<div class="bar">
+<div class="tools"><strong>[csharp]</strong>&#xA0;<a class="ViewSource" title="view plain" href="http://blog.csdn.net/dingkun520wy/article/details/50836780">view plain</a><span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_168">&#xA0;<a class="CopyToClipboard" title="copy" href="http://blog.csdn.net/dingkun520wy/article/details/50836780" target="_blank">copy</a></span></span>
+<div>&#xA0;</div>
+
+<span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_169">&#xA0;<span class="tracking-ad" data-mod="popu_167"><a title="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332" target="_blank"><img src="https://code.csdn.net/assets/CODE_ico.png" alt="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a><span class="tracking-ad" data-mod="popu_170"><a title="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332/fork" target="_blank"><img src="https://code.csdn.net/assets/ico_fork.svg" alt="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a></span></span></span></span></div>
+
+</div>
+<ol class="dp-c" start="1">
+<li class="alt"><span class="keyword">void&#xA0;Start&#xA0;()&#xA0;{&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x952E;&#x503C;&#x5BF9;&#x513F;&#x7684;&#x5F62;&#x5F0F;&#x4FDD;&#x5B58;iTween&#x6240;&#x7528;&#x5230;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Hashtable&#xA0;args&#xA0;=&#xA0;<span class="keyword">new&#xA0;Hashtable();&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x6447;&#x6446;&#x7684;&#x5E45;&#x5EA6;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;amount&quot;,&#xA0;<span class="keyword">new&#xA0;Vector3(20,&#xA0;100,0));&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;x&quot;,&#xA0;20);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;y&quot;,100);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;z&quot;,&#xA0;2);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x662F;&#x4E16;&#x754C;&#x5750;&#x6807;&#x7CFB;&#x8FD8;&#x662F;&#x5C40;&#x90E8;&#x5750;&#x6807;&#x7CFB;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;space&quot;,&#xA0;Space.Self);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7684;&#x6574;&#x4F53;&#x65F6;&#x95F4;&#x3002;&#x5982;&#x679C;&#x4E0E;speed&#x5171;&#x5B58;&#x90A3;&#x4E48;&#x4F18;&#x5148;speed&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;time&quot;,&#xA0;1f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;delay&quot;,&#xA0;0.1f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x4E09;&#x4E2A;&#x5FAA;&#x73AF;&#x7C7B;&#x578B;&#xA0;none&#xA0;loop&#xA0;pingPong&#xA0;(&#x4E00;&#x822C;&#xA0;&#x5FAA;&#x73AF;&#xA0;&#x6765;&#x56DE;)&#xA0;&#xA0;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;none&quot;);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;loop&quot;);&#xA0;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;loopType&quot;,&#xA0;iTween.LoopType.pingPong);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5904;&#x7406;&#x52A8;&#x753B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5F00;&#x59CB;&#x52A8;&#x753B;&#x65F6;&#x8C03;&#x7528;AnimationStart&#x65B9;&#x6CD5;&#xFF0C;5.0&#x8868;&#x793A;&#x5B83;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstart&quot;,&#xA0;<span class="string">&quot;AnimationStart&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstartparams&quot;,&#xA0;5.0f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x8BBE;&#x7F6E;&#x63A5;&#x53D7;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x81EA;&#x8EAB;&#x63A5;&#x53D7;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x522B;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x53D7;&#xFF0C;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x5728;&#x63A5;&#x6536;&#x5BF9;&#x8C61;&#x7684;&#x811A;&#x672C;&#x4E2D;&#x5B9E;&#x73B0;AnimationStart&#x65B9;&#x6CD5;&#x3002;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstarttarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncomplete&quot;,&#xA0;<span class="string">&quot;AnimationEnd&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompleteparams&quot;,&#xA0;<span class="string">&quot;end&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompletetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdate&quot;,&#xA0;<span class="string">&quot;AnimationUpdate&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdatetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdateparams&quot;,&#xA0;<span class="keyword">true);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;iTween.ShakeRotation(btnBegin,&#xA0;args);&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationStart(<span class="keyword">float&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;start&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationEnd(<span class="keyword">string&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;end&#xA0;:&#xA0;&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationUpdate(<span class="keyword">bool&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;update&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+
+</ol></div>
+
+<br>3,ShakeScale<br>
+<p>&#xA0;</p>
+<p>&#xA0;</p>
+<div class="dp-highlighter bg_csharp">
+<div class="bar">
+<div class="tools"><strong>[csharp]</strong>&#xA0;<a class="ViewSource" title="view plain" href="http://blog.csdn.net/dingkun520wy/article/details/50836780">view plain</a><span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_168">&#xA0;<a class="CopyToClipboard" title="copy" href="http://blog.csdn.net/dingkun520wy/article/details/50836780" target="_blank">copy</a></span></span>
+<div>&#xA0;</div>
+
+<span class="tracking-ad" data-mod="popu_168"><span class="tracking-ad" data-mod="popu_169">&#xA0;<span class="tracking-ad" data-mod="popu_167"><a title="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332" target="_blank"><img src="https://code.csdn.net/assets/CODE_ico.png" alt="&#x5728;CODE&#x4E0A;&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a><span class="tracking-ad" data-mod="popu_170"><a title="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" href="https://code.csdn.net/snippets/1603332/fork" target="_blank"><img src="https://code.csdn.net/assets/ico_fork.svg" alt="&#x6D3E;&#x751F;&#x5230;&#x6211;&#x7684;&#x4EE3;&#x7801;&#x7247;" width="12" height="12"></a></span></span></span></span></div>
+
+</div>
+<ol class="dp-c" start="1">
+<li class="alt"><span class="keyword">void&#xA0;Start&#xA0;()&#xA0;{&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x952E;&#x503C;&#x5BF9;&#x513F;&#x7684;&#x5F62;&#x5F0F;&#x4FDD;&#x5B58;iTween&#x6240;&#x7528;&#x5230;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Hashtable&#xA0;args&#xA0;=&#xA0;<span class="keyword">new&#xA0;Hashtable();&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x6447;&#x6446;&#x7684;&#x5E45;&#x5EA6;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;amount&quot;,&#xA0;<span class="keyword">new&#xA0;Vector3(2,0,0));&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;x&quot;,&#xA0;20);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;y&quot;,100);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;z&quot;,&#xA0;2);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7684;&#x6574;&#x4F53;&#x65F6;&#x95F4;&#x3002;&#x5982;&#x679C;&#x4E0E;speed&#x5171;&#x5B58;&#x90A3;&#x4E48;&#x4F18;&#x5148;speed&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;time&quot;,&#xA0;1f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5EF6;&#x8FDF;&#x6267;&#x884C;&#x65F6;&#x95F4;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;delay&quot;,&#xA0;0.1f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x4E09;&#x4E2A;&#x5FAA;&#x73AF;&#x7C7B;&#x578B;&#xA0;none&#xA0;loop&#xA0;pingPong&#xA0;(&#x4E00;&#x822C;&#xA0;&#x5FAA;&#x73AF;&#xA0;&#x6765;&#x56DE;)&#xA0;&#xA0;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;none&quot;);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//args.Add(&quot;loopType&quot;,&#xA0;&quot;loop&quot;);&#xA0;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;loopType&quot;,&#xA0;iTween.LoopType.pingPong);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5904;&#x7406;&#x52A8;&#x753B;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x5F00;&#x59CB;&#x52A8;&#x753B;&#x65F6;&#x8C03;&#x7528;AnimationStart&#x65B9;&#x6CD5;&#xFF0C;5.0&#x8868;&#x793A;&#x5B83;&#x7684;&#x53C2;&#x6570;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstart&quot;,&#xA0;<span class="string">&quot;AnimationStart&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstartparams&quot;,&#xA0;5.0f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x8BBE;&#x7F6E;&#x63A5;&#x53D7;&#x65B9;&#x6CD5;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x9ED8;&#x8BA4;&#x662F;&#x81EA;&#x8EAB;&#x63A5;&#x53D7;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x53EF;&#x4EE5;&#x6539;&#x6210;&#x522B;&#x7684;&#x5BF9;&#x8C61;&#x63A5;&#x53D7;&#xFF0C;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x90A3;&#x4E48;&#x5C31;&#x5F97;&#x5728;&#x63A5;&#x6536;&#x5BF9;&#x8C61;&#x7684;&#x811A;&#x672C;&#x4E2D;&#x5B9E;&#x73B0;AnimationStart&#x65B9;&#x6CD5;&#x3002;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onstarttarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncomplete&quot;,&#xA0;<span class="string">&quot;AnimationEnd&quot;);&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompleteparams&quot;,&#xA0;<span class="string">&quot;end&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;oncompletetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x53C2;&#x6570;&#x548C;&#x4E0A;&#x9762;&#x7C7B;&#x4F3C;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdate&quot;,&#xA0;<span class="string">&quot;AnimationUpdate&quot;);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdatetarget&quot;,&#xA0;gameObject);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;args.Add(<span class="string">&quot;onupdateparams&quot;,&#xA0;<span class="keyword">true);&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;iTween.ShakeScale(btnBegin,&#xA0;args);&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x5F00;&#x59CB;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationStart(<span class="keyword">float&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;start&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x7ED3;&#x675F;&#x65F6;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationEnd(<span class="keyword">string&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;end&#xA0;:&#xA0;&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;<span class="comment">//&#x52A8;&#x753B;&#x4E2D;&#x8C03;&#x7528;&#xA0;&#xA0;</span></li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword">void&#xA0;AnimationUpdate(<span class="keyword">bool&#xA0;f)&#xA0;&#xA0;</span></span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;{&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Debug.Log(<span class="string">&quot;update&#xA0;:&quot;&#xA0;+&#xA0;f);&#xA0;&#xA0;</span></li>
+<li class="alt">&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</li>
+<li>&#xA0;&#xA0;&#xA0;&#xA0;}&#xA0;&#xA0;</li>
+
+</ol></div>
+
+<br>&#x66F4;&#x591A;unity3d&#x52A8;&#x753B;&#x57FA;&#x7840;&#xA0;<a href="http://blog.csdn.net/dingkun520wy/article/details/50550529" target="_blank">http://blog.csdn.net/dingkun520wy/article/details/50550529</a></div>

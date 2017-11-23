@@ -1,0 +1,128 @@
+<p>&#x5B66;&#x4E60;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#x5929;&#x7684;AngularJS&#xFF0C;&#x4ECA;&#x5929;&#x60F3;&#x4ECE;&#x5B9E;&#x6218;&#x7684;&#x89D2;&#x5EA6;&#x548C;&#x5927;&#x5BB6;&#x5206;&#x4EAB;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;Demo--&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x7CFB;&#x7EDF;&#xFF0C;&#x4EE5;&#x5DE9;&#x56FA;&#x4E4B;&#x524D;&#x6240;&#x5B66;&#x77E5;&#x8BC6;&#x3002;&#x529F;&#x80FD;&#x9700;&#x6C42;&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x4E24;&#x70B9; 1.&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x5728;&#x524D;&#x7AEF;&#x5C55;&#x793A; 2.&#x6839;&#x636E;id&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x5C55;&#x793A;&#x5728;&#x524D;&#x7AEF;&#x3002;Ok&#xFF0C;&#x9700;&#x6C42;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x5F00;&#x59CB;&#x5B9E;&#x73B0;&#x6240;&#x63D0;&#x7684;&#x529F;&#x80FD;&#x9700;&#x6C42;&#x3002;</p>
+<h1>&#x4EE3;&#x7801;&#x6846;&#x67B6;</h1>
+<p>&#x524D;&#x7AEF;&#x7684;&#x4EE3;&#x7801;&#x901A;&#x5E38;&#x5305;&#x542B;&#x4E09;&#x90E8;&#x5206;&#xFF1A;html, css, &#x548C;JavaScript&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;html&#x7F16;&#x5199;&#x89C6;&#x56FE;&#x6587;&#x4EF6;&#xFF0C;css&#x6765;&#x8FDB;&#x884C;&#x89C6;&#x56FE;&#x6837;&#x5F0F;&#x63A7;&#x5236;&#xFF0C;JS&#x6765;&#x5B9E;&#x73B0;&#x63A7;&#x5236;&#x5668;&#x4EE3;&#x7801;&#x3002;&#x672C;&#x6587;&#x7684;&#x91CD;&#x70B9;&#x5728;&#x4E8E;AngularJS&#x7684;&#x56DE;&#x987E;&#x5B66;&#x4E60;&#xFF0C;&#x4F7F;&#x7528;&#x7B80;&#x5355;&#x7684;html&#x89C6;&#x56FE;&#x5373;&#x53EF;&#xFF0C;&#x4E0D;&#x4F1A;&#x6D89;&#x53CA;&#x5F88;&#x70AB;&#x7684;CSS&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x3002;&#x672C;&#x4F8B;&#x7684;&#x4EE3;&#x7801;&#x7684;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;&#x5206;&#x4E3A;&#x7B80;&#x5355;&#x7684;&#x4E24;&#x5C42;&#x76EE;&#x5F55;&#xFF0C;UserMgt&#x4E3A;&#x6574;&#x4E2A;Demo&#x7684;&#x5305;&#x540D;&#xFF0C;JS&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x7B2C;&#x4E09;&#x65B9;js&#x4EE3;&#x7801;&#x5982;angular.js&#xFF0C;controller&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x6211;&#x4EEC;&#x7684;&#x63A7;&#x5236;&#x5668;&#x4EE3;&#x7801;&#xFF0C;tml&#x76EE;&#x5F55;&#x5B58;&#x50A8;html&#x524D;&#x7AEF;&#x6587;&#x4EF6;&#xFF0C; conf&#x4E2D;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x3002;</p>
+<p>----------UserMgt</p>
+<p>-------------JS</p>
+<p>-------------controller</p>
+<p>-------------tml</p>
+<p>-------------conf</p>
+<h1 id="code">Code</h1>
+<p>&#x672C;&#x4F8B;&#x4E2D;&#x6211;&#x4EEC;&#x5F15;&#x5165;angular.js&#x548C;angular-route.js v1.2.20&#x6587;&#x4EF6;&#xFF0C;&#x653E;&#x5728;&#x6211;&#x4EEC;&#x7684;JS&#x76EE;&#x5F55;&#x4E0B;&#x3002;angularJS&#x81EA;&#x8EAB;&#x63D0;&#x4F9B;&#x7684;route&#x4F7F;&#x7528;&#x4E0D;&#x591F;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7B2C;&#x4E09;&#x65B9;&#x7684;angular-route&#x6846;&#x67B6;&#x8FDB;&#x884C;&#x8DEF;&#x7531;&#x5206;&#x914D;&#x3002;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7F16;&#x5199;&#x6211;&#x4EEC;&#x524D;&#x7AEF;&#x7684;&#x663E;&#x793A;&#x754C;&#x9762;&#x3002;</p>
+<h4 id="index.html">1. index.html&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;</h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;!--&#x5B9A;&#x4E49;AngularJS app--&gt;
+&lt;html ng-app=&quot;UserMgt&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;/&gt;
+    &lt;title&gt;user mgt demo &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h1&gt;&#x7528;&#x6237;&#x7BA1;&#x7406;Demo&lt;/h1&gt;
+&lt;!--&#x4F7F;&#x7528;ng-show&#xFF0C;&#x8868;&#x660E;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x8DEF;&#x7531;&#x63A7;&#x5236;&#x6765;&#x7BA1;&#x7406;&#x9875;&#x9762;&#x4E4B;&#x95F4;&#x7684;&#x8DF3;&#x8F6C;
+--&gt;
+&lt;div ng-view&gt;
+    loading...
+&lt;/div&gt;&lt;!--&#x89C6;&#x56FE;&#x6A21;&#x677F;&#x5BB9;&#x5668;--&gt;
+
+&lt;!--&#x5F15;&#x5165;ng-app&#x6240;&#x9700;&#x7684;js&#x6587;&#x4EF6;--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/angular.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/angular-route.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;../js/controller/mgt_controller.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<h4 id="detail.html-">2.detail.html, &#x7528;&#x4E8E;&#x663E;&#x793A;&#x4E00;&#x6761;&#x7528;&#x6237;&#x7684;&#x6570;&#x636E;&#x4FE1;&#x606F;&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#x6240;&#x793A;</h4>
+<pre><code>&lt;table border=&quot;1&quot;&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&#x7528;&#x6237;&#x540D;&lt;/td&gt;
+        &lt;!--&#x4F7F;&#x7528;ng-model&#x7ED1;&#x5B9A;item&#x5BF9;&#x8C61;&#x7684;username&#x5C5E;&#x6027;--&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; ng-model=&quot;item.username&quot;/&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;&#x7537;&lt;/td&gt;
+        &lt;!--&#x4F7F;&#x7528;ng-model&#x7ED1;&#x5B9A;item&#x5BF9;&#x8C61;&#x7684;gender&#x5C5E;&#x6027;--&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; ng-model=&quot;item.gender&quot;/&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;`
+        &lt;td&gt;&#x90AE;&#x7BB1;&lt;/td&gt;
+        &lt;!--&#x4F7F;&#x7528;ng-model&#x7ED1;&#x5B9A;item&#x5BF9;&#x8C61;&#x7684;email&#x5C5E;&#x6027;--&gt;
+        &lt;td&gt;&lt;input type=&quot;text&quot; ng-model=&quot;item.email&quot;/&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<h4 id="list.htmlcode">3. list.html&#x7528;&#x4E8E;&#x663E;&#x793A;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;code&#x5F88;&#x7B80;&#x5355;&#x5982;&#x4E0B;&#x6240;&#x793A;</h4>
+<pre><code>&lt;table border=&quot;1&quot;&gt; 
+    &lt;tr&gt;
+    &lt;!--&#x8BBE;&#x7F6E;&#x8868;&#x5934;--&gt;
+        &lt;td&gt;&#x7528;&#x6237;&#x540D;&lt;/td&gt;
+        &lt;td&gt;&#x6027;&#x522B;&lt;/td&gt;
+        &lt;td&gt;&#x90AE;&#x7BB1;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!--&#x4F7F;&#x7528;ng-repeat&#xFF0C;&#x904D;&#x5386;&#x6240;&#x6709;&#x7684;user--&gt;
+    &lt;tr ng-repeat=&quot;user in users&quot;&gt; 
+            &lt;td&gt;{{user.username}}&lt;/td&gt;
+        &lt;td&gt;{{user.gender}}&lt;/td&gt;
+        &lt;td&gt;{{user.email}}&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+<h4 id="mgt_controller.js">4. mgt_controller.js&#xFF0C;</h4>
+<pre><code>&lt;!--&#x5B9A;&#x4E49;UserMgt Ajs&#x6A21;&#x5757;&#xFF0C;&#x6A21;&#x5757;&#x4F9D;&#x8D56;ngRoute--&gt;
+var umService = angular.module(&apos;UserMgt&apos;, [&apos;ngRoute&apos;]);
+
+&lt;!--&#x8DEF;&#x7531;&#x5B9A;&#x4E49;--&gt;
+umService.config(
+    function ($routeProvider) {
+        $routeProvider
+            &lt;!--&#x9879;&#x76EE;&#x6253;&#x5F00;&#x9ED8;&#x8BA4;&#x8C03;&#x5230;list.html&#x9875;&#x9762;&#xFF0C;&#x7ED1;&#x5B9A;ListController&#x8FDB;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x63A7;&#x5236;--&gt;
+            .when(&apos;/&apos;, {
+                controller: ListController,
+                templateUrl: &apos;../tml/list.html&apos;
+            })
+            &lt;!--&#x5B9A;&#x4E49;&#x8BBF;&#x95EE;url--&gt;
+            .when(&apos;/get/:id&apos;, {
+                &lt;!--&#x5B9A;&#x4E49;&#x7ED1;&#x5B9A;&#x7684;&#x63A7;&#x5236;&#x5668;--&gt;
+                controller: GetController,
+                &lt;!--&#x5B9A;&#x4E49;&#x8DF3;&#x8F6C;&#x7684;&#x9875;&#x9762;--&gt;
+                templateUrl: &quot;../tml/detail.html&quot;
+            }) 
+            .otherwise({
+                &lt;!--&#x5176;&#x4ED6;&#x60C5;&#x51B5;&#xFF0C;&#x6307;&#x5B9A;url&#x8DF3;&#x8F6C;--&gt;
+                redirectTo: &apos;/&apos;
+            });
+    }
+)
+
+&lt;!--ListController&#x5B9A;&#x4E49;--&gt;
+function ListController($scope, $http) {
+    &lt;!--&#x83B7;&#x53D6;&#x672C;&#x5730;json&#x8D44;&#x6E90;&#x6587;&#x4EF6;--&gt;
+    $http.get(&apos;../conf/user.json&apos;).success(function (data) {
+        &lt;!--&#x6D4F;&#x89C8;&#x5668;console&#x7AEF;&#x53E3;&#x6253;&#x5370;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;--&gt;
+        console.log(data);
+        $scope.users = data;
+    });
+}
+
+&lt;!--GetController&#x63A7;&#x5236;&#x5668;&#x5B9A;&#x4E49;--&gt;
+function GetController($scope, $http, $routeParams) {
+    var id = $routeParams.id;
+    &lt;!--&#x83B7;&#x53D6;&#x672C;&#x5730;json&#x8D44;&#x6E90;&#x6587;&#x4EF6;--&gt;
+    $http.get(&apos;../conf/user.json&apos;).success(function (data) {
+        console.log(data);
+        $scope.item = data[id];
+    });
+}</code></pre>
+<h4 id="user.jsonjson">5. user.json&#x4E2D;json&#x4E2D;&#x5B58;&#x50A8;&#x5982;&#x4E0B;&#x7684;&#x6570;&#x636E;&#xFF1A;</h4>
+<pre><code>[
+    { &quot;id&quot;: 1, &quot;username&quot;: &quot;situ&quot;, &quot;gender&quot;: &quot;&#x7537;&quot;, &quot;email&quot;: &quot;gao_st@126.com&quot; },
+    { &quot;id&quot;: 2, &quot;username&quot;: &quot;wb&quot;, &quot;gender&quot;: &quot;&#x5973;&quot;, &quot;email&quot;: &quot;wb@126.com&quot; },
+    { &quot;id&quot;: 3, &quot;username&quot;: &quot;lml&quot;, &quot;gender&quot;: &quot;&#x7537;&quot;, &quot;email&quot;: &quot;lml@126.com&quot; },
+    { &quot;id&quot;: 4, &quot;username&quot;: &quot;wjd&quot;, &quot;gender&quot;: &quot;&#x5973;&quot;, &quot;email&quot;: &quot;wjd@126.com&quot; },
+    { &quot;id&quot;: 5, &quot;username&quot;: &quot;lyl&quot;, &quot;gender&quot;: &quot;&#x7537;&quot;, &quot;email&quot;: &quot;lyl@126.com&quot; },
+    { &quot;id&quot;: 6, &quot;username&quot;: &quot;wjh&quot;, &quot;gender&quot;: &quot;&#x5973;&quot;, &quot;email&quot;: &quot;wjh@126.com&quot; }
+]</code></pre>
+<h1 id="result">Result</h1>
+<h4>1. &#x5C55;&#x793A;&#x6240;&#x6709;&#x7528;&#x6237;&#x4FE1;&#x606F;</h4>
+<p><img src="http://images2015.cnblogs.com/blog/806920/201603/806920-20160309164138225-681299358.png" alt=""></p>
+<h4>2. &#x83B7;&#x53D6;&#x67D0;&#x4E00;&#x7528;&#x6237;&#x4FE1;&#x606F;</h4>
+<p><img src="http://images2015.cnblogs.com/blog/806920/201603/806920-20160309164154710-1127518860.png" alt=""></p>

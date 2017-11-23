@@ -1,0 +1,282 @@
+<p><span style="font-size: 16px;">&#x6211;&#x4EEC;&#x4ECE;Activity&#x7684;setContentView()&#x5165;&#x624B;&#xFF0C;&#x5F00;&#x59CB;&#x6E90;&#x7801;&#x89E3;&#x6790;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #008000;">//</span><span style="color: #008000;">Activity.setContentView</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> setContentView(<span style="color: #0000ff;">int</span><span style="color: #000000;"> layoutResID) {
+        getWindow().setContentView(layoutResID);
+        initActionBar();
+    }
+
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;">PhoneWindow.setContentView</span>
+    <span style="color: #0000ff;">public</span> <span style="color: #0000ff;">void</span> setContentView(<span style="color: #0000ff;">int</span><span style="color: #000000;"> layoutResID) {
+        </span><span style="color: #0000ff;">if</span> (mContentParent == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+            installDecor();
+        } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+            mContentParent.removeAllViews();
+        }
+        <span style="color: #ff0000;">mLayoutInflater.inflate(layoutResID, mContentParent);
+        </span></span><span style="color: #0000ff;">final</span> Callback cb =<span style="color: #000000;"> getCallback();
+        </span><span style="color: #0000ff;">if</span> (cb != <span style="color: #0000ff;">null</span> &amp;&amp; !<span style="color: #000000;">isDestroyed()) {
+            cb.onContentChanged();
+        }
+    }</span></pre>
+</div>
+<p><span style="color: #000000; font-size: 16px;">&#x53D1;&#x73B0;&#x662F;&#x4F7F;&#x7528;mLayoutInflater&#x521B;&#x5EFA;View&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53BB;LayoutInflater.inflate()&#x91CC;&#x9762;&#x770B;&#x4E0B;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #0000ff;">public</span> View inflate(<span style="color: #0000ff;">int</span> resource, ViewGroup root, <span style="color: #0000ff;">boolean</span><span style="color: #000000;"> attachToRoot) {
+        </span><span style="color: #0000ff;">if</span> (DEBUG) System.out.println(&quot;INFLATING from resource: &quot; +<span style="color: #000000;"> resource);
+        XmlResourceParser parser </span>=<span style="color: #000000;"> getContext().getResources().getLayout(resource);
+        </span><span style="color: #0000ff;">try</span><span style="color: #000000;"> {
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> inflate(parser, root, attachToRoot);
+        } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+            parser.close();
+        }
+    }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x5148;&#x6839;&#x636E;resource id &#x83B7;&#x53D6;&#x5230;XmlResourceParseer&#xFF0C;&#x610F;&#x5982;&#x5176;&#x540D;&#xFF0C;&#x5C31;&#x662F;xml&#x7684;&#x89E3;&#x6790;&#x5668;&#xFF0C;&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#xFF0C;&#x8FDB;&#x5165;&#x5230;inflate&#x7684;&#x6838;&#x5FC3;&#x65B9;&#x6CD5;&#xFF0C;&#x6709;&#x4E9B;&#x957F;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x5206;&#x6790;&#x5173;&#x952E;&#x90E8;&#x5206;&#xFF1A;</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">public</span> View inflate(XmlPullParser parser, ViewGroup root, <span style="color: #0000ff;">boolean</span><span style="color: #000000;"> attachToRoot) {
+        ......
+
+                </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_MERGE.equals(name)) {
+                    </span><span style="color: #0000ff;">if</span> (root == <span style="color: #0000ff;">null</span> || !<span style="color: #000000;">attachToRoot) {
+                        </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> InflateException(&quot;&lt;merge /&gt; can be used only with a valid &quot;
+                                + &quot;ViewGroup root and attachToRoot=true&quot;<span style="color: #000000;">);
+                    }
+
+                    rInflate(parser, root, attrs, </span><span style="color: #0000ff;">false</span><span style="color: #000000;">);
+                } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Temp is the root view that was found in the xml</span>
+<span style="color: #000000;">                    View temp;
+                    </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_1995.equals(name)) {
+                        temp </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> BlinkLayout(mContext, attrs);
+                    } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                        temp </span>=<span style="color: #000000;"> createViewFromTag(root, name, attrs);
+                    }
+        ......
+            } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (XmlPullParserException e) {
+                InflateException ex </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> InflateException(e.getMessage());
+                ex.initCause(e);
+                </span><span style="color: #0000ff;">throw</span><span style="color: #000000;"> ex;
+            } </span><span style="color: #0000ff;">catch</span><span style="color: #000000;"> (IOException e) {
+                InflateException ex </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> InflateException(
+                        parser.getPositionDescription()
+                        </span>+ &quot;: &quot; +<span style="color: #000000;"> e.getMessage());
+                ex.initCause(e);
+                </span><span style="color: #0000ff;">throw</span><span style="color: #000000;"> ex;
+            } </span><span style="color: #0000ff;">finally</span><span style="color: #000000;"> {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Don&apos;t retain static reference on context.</span>
+                mConstructorArgs[0] =<span style="color: #000000;"> lastContext;
+                mConstructorArgs[</span>1] = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+            }
+
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> result;
+        }
+    }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x5982;&#x679C;tag&#x7684;&#x540D;&#x5B57;&#x4E0D;&#x662F;TAG_1995&#xFF08;&#x540D;&#x5B57;&#x662F;&#x4E2A;&#x6897;&#xFF09;&#xFF0C;&#x5C31;&#x8C03;&#x7528;&#x51FD;&#x6570;createViewFromTag()&#x521B;&#x5EFA;View&#xFF0C;&#x8FDB;&#x53BB;&#x770B;&#x770B;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">    View createViewFromTag(View parent, String name, AttributeSet attrs) {
+        </span><span style="color: #0000ff;">if</span> (name.equals(&quot;view&quot;<span style="color: #000000;">)) {
+            name </span>= attrs.getAttributeValue(<span style="color: #0000ff;">null</span>, &quot;class&quot;<span style="color: #000000;">);
+        }
+
+        ......
+
+            View view;
+            </span><span style="color: #0000ff;">if</span> (mFactory2 != <span style="color: #0000ff;">null</span>) view =<span style="color: #000000;"> mFactory2.onCreateView(parent, name, mContext, attrs);
+            </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span> (mFactory != <span style="color: #0000ff;">null</span>) view =<span style="color: #000000;"> mFactory.onCreateView(name, mContext, attrs);
+            </span><span style="color: #0000ff;">else</span> view = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+
+            </span><span style="color: #0000ff;">if</span> (view == <span style="color: #0000ff;">null</span> &amp;&amp; mPrivateFactory != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                view </span>=<span style="color: #000000;"> mPrivateFactory.onCreateView(parent, name, mContext, attrs);
+            }
+            
+            </span><span style="color: #0000ff;">if</span> (view == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">if</span> (-1 == name.indexOf(&apos;.&apos;<span style="color: #000000;">)) {
+                    view </span>=<span style="color: #000000;"> onCreateView(parent, name, attrs);
+                } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                    view </span>= createView(name, <span style="color: #0000ff;">null</span><span style="color: #000000;">, attrs);
+                }
+            }
+
+            </span><span style="color: #0000ff;">if</span> (DEBUG) System.out.println(&quot;Created view is: &quot; +<span style="color: #000000;"> view);
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> view;
+    ......
+    }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x9996;&#x5148;&#x5C1D;&#x8BD5;&#x7528;3&#x4E2A;Fractory&#x521B;&#x5EFA;View&#xFF0C;&#x5982;&#x679C;&#x6210;&#x529F;&#x5C31;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x4E86;&#x3002;<span style="color: #ff0000;">&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#xFF0C;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;Factory&#x6765;&#x63A7;&#x5236;View&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x3002;</span></span></p>
+<p><span style="font-size: 16px;">&#x5982;&#x679C;&#x6CA1;&#x6709;Factory&#x6216;&#x521B;&#x5EFA;&#x5931;&#x8D25;&#xFF0C;&#x90A3;&#x4E48;&#x8D70;&#x9ED8;&#x8BA4;&#x903B;&#x8F91;&#x3002;</span></p>
+<p><span style="font-size: 16px;">&#x5148;&#x5224;&#x65AD;name&#x4E2D;&#x662F;&#x5426;&#x6709;&apos;.&apos;&#x5B57;&#x7B26;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x5219;&#x8BA4;&#x4E3A;&#x4F7F;&#x7528;android&#x81EA;&#x5DF1;&#x7684;View&#xFF0C;&#x6B64;&#x65F6;&#x4F1A;&#x5728;name&#x7684;&#x524D;&#x9762;&#x52A0;&#x4E0A;&#x5305;&#x540D;&quot;android.view.&quot;&#xFF1B;&#x5982;&#x679C;&#x6709;&#x8FD9;&#x4E2A;&apos;.&apos;&#xFF0C;&#x5219;&#x8BA4;&#x4E3A;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x5B9A;&#x4E49;View&#xFF0C;&#x8FD9;&#x65F6;&#x65E0;&#x9700;&#x6DFB;&#x52A0;&#x4EFB;&#x4F55;&#x524D;&#x7F00;&#xFF0C;&#x8BA4;&#x4E3A;name&#x5DF2;&#x7ECF;&#x5305;&#x542B;&#x5168;&#x5305;&#x540D;&#x4E86;&#x3002;</span></p>
+<p><span style="font-size: 16px;">&#x6700;&#x7EC8;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x5168;&#x5305;&#x540D;&#x7684;name&#x6765;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #0000ff;">private</span> <span style="color: #0000ff;">static</span> <span style="color: #0000ff;">final</span> HashMap&lt;String, Constructor&lt;? <span style="color: #0000ff;">extends</span> View&gt;&gt; sConstructorMap =
+            <span style="color: #0000ff;">new</span> HashMap&lt;String, Constructor&lt;? <span style="color: #0000ff;">extends</span> View&gt;&gt;<span style="color: #000000;">();
+
+    </span><span style="color: #0000ff;">protected</span><span style="color: #000000;"> View onCreateView(String name, AttributeSet attrs)
+            </span><span style="color: #0000ff;">throws</span><span style="color: #000000;"> ClassNotFoundException {
+        </span><span style="color: #0000ff;">return</span> createView(name, &quot;android.view.&quot;<span style="color: #000000;">, attrs);
+    }
+
+    </span><span style="color: #0000ff;">public</span> <span style="color: #0000ff;">final</span><span style="color: #000000;"> View createView(String name, String prefix, AttributeSet attrs)
+            </span><span style="color: #0000ff;">throws</span><span style="color: #000000;"> ClassNotFoundException, InflateException {
+        Constructor</span>&lt;? <span style="color: #0000ff;">extends</span> View&gt; constructor =<span style="color: #000000;"> sConstructorMap.get(name);
+        Class</span>&lt;? <span style="color: #0000ff;">extends</span> View&gt; clazz = <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+        &#x3000;&#x3000; ......
+
+            </span><span style="color: #0000ff;">if</span> (constructor == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Class not found in the cache, see if it&apos;s real, and try to add it</span>
+                clazz =<span style="color: #000000;"> mContext.getClassLoader().loadClass(
+                        prefix </span>!= <span style="color: #0000ff;">null</span> ? (prefix + name) : name).asSubclass(View.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                
+                </span><span style="color: #0000ff;">if</span> (mFilter != <span style="color: #0000ff;">null</span> &amp;&amp; clazz != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">boolean</span> allowed =<span style="color: #000000;"> mFilter.onLoadClass(clazz);
+                    </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">allowed) {
+                        failNotAllowed(name, prefix, attrs);
+                    }
+                }
+                constructor </span>=<span style="color: #000000;"> clazz.getConstructor(mConstructorSignature);
+                sConstructorMap.put(name, constructor);
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> If we have a filter, apply it to cached constructor</span>
+                <span style="color: #0000ff;">if</span> (mFilter != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Have we seen this name before?</span>
+                    Boolean allowedState =<span style="color: #000000;"> mFilterMap.get(name);
+                    </span><span style="color: #0000ff;">if</span> (allowedState == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;"> New class -- remember whether it is allowed</span>
+                        clazz =<span style="color: #000000;"> mContext.getClassLoader().loadClass(
+                                prefix </span>!= <span style="color: #0000ff;">null</span> ? (prefix + name) : name).asSubclass(View.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                        
+                        </span><span style="color: #0000ff;">boolean</span> allowed = clazz != <span style="color: #0000ff;">null</span> &amp;&amp;<span style="color: #000000;"> mFilter.onLoadClass(clazz);
+                        mFilterMap.put(name, allowed);
+                        </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">allowed) {
+                            failNotAllowed(name, prefix, attrs);
+                        }
+                    } </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;"> (allowedState.equals(Boolean.FALSE)) {
+                        failNotAllowed(name, prefix, attrs);
+                    }
+                }
+            }
+
+            Object[] args </span>=<span style="color: #000000;"> mConstructorArgs;
+            args[</span>1] =<span style="color: #000000;"> attrs;
+            </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> constructor.newInstance(args);
+            ......
+    }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x4ECE;&#x6E90;&#x7801;&#x4E2D;&#x770B;&#x5230;&#xFF0C;&#x5728;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#x524D;&#xFF0C;&#x4F1A;&#x5148;&#x4ECE;&#x4E00;&#x4E2A;&#x9759;&#x6001;Map&#x4E2D;&#x83B7;&#x53D6;&#x7F13;&#x5B58;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>Constructor&lt;? <span style="color: #0000ff;">extends</span> View&gt; constructor = sConstructorMap.get(name);</pre>
+</div>
+<p><span style="font-size: 16px;">&#x7F13;&#x5B58;&#x7684;&#x662F;Constructor&#x5BF9;&#x8C61;&#xFF0C;&#x76EE;&#x7684;&#x662F;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5B9E;&#x4F8B;&#xFF0C;&#x8FD9;&#x91CC;&#x8981;&#x6CE8;&#x610F;sConstructorMap&#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x8FC7;Constructor&#x521B;&#x5EFA;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x662F;&#x4F7F;&#x7528;&#x548C;Constructor&#x5BF9;&#x8C61;&#x540C;&#x4E00;&#x4E2A;ClassLoader&#x6765;&#x521B;&#x5EFA;&#x7684;&#xFF0C;<span style="color: #ff0000;">&#x6362;&#x53E5;&#x8BDD;&#x8BF4;&#xFF0C;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x4E2D;&#xFF0C;&#x540C;&#x4E00;&#x4E2A;&#x81EA;&#x5B9A;&#x4E49;View&#x5BF9;&#x8C61;&#xFF0C;&#x662F;&#x65E0;&#x6CD5;&#x7528;&#x4E0D;&#x540C;ClassLoader&#x52A0;&#x8F7D;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x4E0D;&#x8981;&#x8BA9;&#x7CFB;&#x7EDF;&#x4F7F;&#x7528;createView()&#x63A5;&#x53E3;&#x521B;&#x5EFA;View&#xFF0C;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x81EA;&#x5B9A;&#x4E49;Factory&#x6216;Factory2&#x6765;&#x81EA;&#x884C;&#x521B;&#x5EFA;View&#x3002;</span></span></p>
+<p><span style="font-size: 16px;">&#x7EE7;&#x7EED;&#x5F80;&#x4E0B;&#x770B;&#xFF0C;&#x5982;&#x679C;&#x7F13;&#x5B58;&#x91CC;&#x6CA1;&#x6709;&#xFF0C;&#x5219;&#x521B;&#x5EFA;View&#x7684;Class&#x5BF9;&#x8C61;clazz&#xFF0C;&#x5E76;&#x7F13;&#x5B58;&#x5230;sConstructorMap&#x4E2D;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>            <span style="color: #0000ff;">if</span> (constructor == <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                </span><span style="color: #008000;">//</span><span style="color: #008000;"> Class not found in the cache, see if it&apos;s real, and try to add it</span>
+                clazz =<span style="color: #000000;"> mContext.getClassLoader().loadClass(
+                        prefix </span>!= <span style="color: #0000ff;">null</span> ? (prefix + name) : name).asSubclass(View.<span style="color: #0000ff;">class</span><span style="color: #000000;">);
+                
+                </span><span style="color: #0000ff;">if</span> (mFilter != <span style="color: #0000ff;">null</span> &amp;&amp; clazz != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">boolean</span> allowed =<span style="color: #000000;"> mFilter.onLoadClass(clazz);
+                    </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">allowed) {
+                        failNotAllowed(name, prefix, attrs);
+                    }
+                }
+                constructor </span>=<span style="color: #000000;"> clazz.getConstructor(mConstructorSignature);
+                sConstructorMap.put(name, constructor);
+            }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x7136;&#x540E;&#x5C31;&#x662F;newInstance&#x4E86;&#xFF0C;&#x81F3;&#x6B64;&#x8FD9;&#x4E2A;View&#x4FBF;&#x4ECE;xml&#x4E2D;&#x53D8;&#x6210;&#x4E86;java&#x5BF9;&#x8C61;&#xFF0C;&#x6211;&#x4EEC;&#x7EE7;&#x7EED;&#x8FD4;&#x56DE;&#x5230;inflate&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x770B;&#x770B;&#x8FD9;&#x4E2A;View&#x8FD4;&#x56DE;&#x4E4B;&#x540E;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">                ......
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Temp is the root view that was found in the xml</span>
+<span style="color: #000000;">                    View temp;
+                    </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_1995.equals(name)) {
+                        temp </span>= <span style="color: #0000ff;">new</span><span style="color: #000000;"> BlinkLayout(mContext, attrs);
+                    } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                        temp </span>=<span style="color: #000000;"> createViewFromTag(root, name, attrs);
+                    }
+
+                    ViewGroup.LayoutParams params </span>= <span style="color: #0000ff;">null</span><span style="color: #000000;">;
+
+                    </span><span style="color: #0000ff;">if</span> (root != <span style="color: #0000ff;">null</span><span style="color: #000000;">) {
+                        </span><span style="color: #008000;">//</span><span style="color: #008000;"> Create layout params that match root, if supplied</span>
+                        params =<span style="color: #000000;"> root.generateLayoutParams(attrs);
+                        </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">attachToRoot) {
+                            </span><span style="color: #008000;">//</span><span style="color: #008000;"> Set the layout params for temp if we are not
+                            </span><span style="color: #008000;">//</span><span style="color: #008000;"> attaching. (If we are, we use addView, below)</span>
+<span style="color: #000000;">                            temp.setLayoutParams(params);
+                        }
+                    }
+
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Inflate all children under temp</span>
+                    rInflate(parser, temp, attrs, <span style="color: #0000ff;">true</span><span style="color: #000000;">);
+
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> We are supposed to attach all the views we found (int temp)
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> to root. Do that now.</span>
+                    <span style="color: #0000ff;">if</span> (root != <span style="color: #0000ff;">null</span> &amp;&amp;<span style="color: #000000;"> attachToRoot) {
+                        root.addView(temp, params);
+                    }
+
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> Decide whether to return the root that was passed in or the
+                    </span><span style="color: #008000;">//</span><span style="color: #008000;"> top view found in xml.</span>
+                    <span style="color: #0000ff;">if</span> (root == <span style="color: #0000ff;">null</span> || !<span style="color: #000000;">attachToRoot) {
+                        result </span>=<span style="color: #000000;"> temp;
+                    }
+            ......
+            </span><span style="color: #0000ff;">return</span> result;</pre>
+</div>
+<p><span style="font-size: 16px;">&#x4ECE;createViewFromTag&#x8FD4;&#x56DE;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x4E2A;rInflate()&#xFF0C;&#x5176;&#x4E2D;parent&#x53C2;&#x6570;&#x5C31;&#x662F;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x51FA;&#x7684;View&#xFF0C;&#x5E94;&#x8BE5;&#x80FD;&#x731C;&#x5230;&#x91CC;&#x9762;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>    <span style="color: #0000ff;">void</span> rInflate(XmlPullParser parser, View parent, <span style="color: #0000ff;">final</span><span style="color: #000000;"> AttributeSet attrs,
+            </span><span style="color: #0000ff;">boolean</span> finishInflate) <span style="color: #0000ff;">throws</span><span style="color: #000000;"> XmlPullParserException, IOException {
+
+        </span><span style="color: #0000ff;">final</span> <span style="color: #0000ff;">int</span> depth =<span style="color: #000000;"> parser.getDepth();
+        </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> type;
+
+        </span><span style="color: #0000ff;">while</span> (((type = parser.next()) != XmlPullParser.END_TAG ||<span style="color: #000000;">
+                parser.getDepth() </span>&gt; depth) &amp;&amp; type !=<span style="color: #000000;"> XmlPullParser.END_DOCUMENT) {
+
+            </span><span style="color: #0000ff;">if</span> (type !=<span style="color: #000000;"> XmlPullParser.START_TAG) {
+                </span><span style="color: #0000ff;">continue</span><span style="color: #000000;">;
+            }
+
+            </span><span style="color: #0000ff;">final</span> String name =<span style="color: #000000;"> parser.getName();
+            
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_REQUEST_FOCUS.equals(name)) {
+                parseRequestFocus(parser, parent);
+            } </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_INCLUDE.equals(name)) {
+                </span><span style="color: #0000ff;">if</span> (parser.getDepth() == 0<span style="color: #000000;">) {
+                    </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> InflateException(&quot;&lt;include /&gt; cannot be the root element&quot;<span style="color: #000000;">);
+                }
+                parseInclude(parser, parent, attrs);
+            } </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_MERGE.equals(name)) {
+                </span><span style="color: #0000ff;">throw</span> <span style="color: #0000ff;">new</span> InflateException(&quot;&lt;merge /&gt; must be the root element&quot;<span style="color: #000000;">);
+            } </span><span style="color: #0000ff;">else</span> <span style="color: #0000ff;">if</span><span style="color: #000000;"> (TAG_1995.equals(name)) {
+                </span><span style="color: #0000ff;">final</span> View view = <span style="color: #0000ff;">new</span><span style="color: #000000;"> BlinkLayout(mContext, attrs);
+                </span><span style="color: #0000ff;">final</span> ViewGroup viewGroup =<span style="color: #000000;"> (ViewGroup) parent;
+                </span><span style="color: #0000ff;">final</span> ViewGroup.LayoutParams params =<span style="color: #000000;"> viewGroup.generateLayoutParams(attrs);
+                rInflate(parser, view, attrs, </span><span style="color: #0000ff;">true</span><span style="color: #000000;">);
+                viewGroup.addView(view, params);                
+            } </span><span style="color: #0000ff;">else</span><span style="color: #000000;"> {
+                </span><span style="color: #0000ff;">final</span> View view =<span style="color: #000000;"><span style="color: #ff0000;"> createViewFromTag(parent, name, attrs)</span>;
+                </span><span style="color: #0000ff;">final</span> ViewGroup viewGroup =<span style="color: #000000;"> (ViewGroup) parent;
+                </span><span style="color: #0000ff;">final</span> ViewGroup.LayoutParams params =<span style="color: #000000;"> viewGroup.generateLayoutParams(attrs);
+                rInflate(parser, view, attrs, </span><span style="color: #0000ff;">true</span><span style="color: #000000;">);
+                viewGroup.addView(view, params);
+            }
+        }
+
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> (finishInflate) parent.onFinishInflate();
+    }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x6CA1;&#x9519;&#xFF0C;&#x5C31;&#x662F;&#x9012;&#x5F52;&#x7684;&#x4F7F;&#x7528;createViewFromTag()&#x521B;&#x5EFA;&#x5B50;View&#xFF0C;&#x5E76;&#x901A;&#x8FC7;ViewGroup.addView&#x6DFB;&#x52A0;&#x5230;parent view&#x4E2D;&#x3002;</span></p>
+<p><span style="font-size: 16px;">&#x4E4B;&#x540E;&#xFF0C;&#x8FD9;&#x4E2A;View&#x6811;&#x4E0A;&#x7684;&#x6240;&#x6709;View&#x90FD;&#x521B;&#x5EFA;&#x5B8C;&#x6BD5;&#x3002;&#x7136;&#x540E;&#x4F1A;&#x6839;&#x636E;inflate()&#x7684;&#x53C2;&#x6570;&#xFF08;root&#x548C;attachToRoot&#xFF09;&#x5224;&#x65AD;&#x662F;&#x5426;&#x5C06;&#x65B0;&#x521B;&#x5EFA;&#x7684;View&#x6DFB;&#x52A0;&#x5230;root view&#x4E2D;&#xFF0C;</span></p>
+<div class="cnblogs_code">
+<pre>            <span style="color: #0000ff;">if</span> (root != <span style="color: #0000ff;">null</span> &amp;&amp;<span style="color: #000000;"> attachToRoot) {
+                root.addView(temp, params);
+            }</span></pre>
+</div>
+<p><span style="font-size: 16px;">&#x7136;&#x540E;&#xFF0C;inflate()&#x5C31;&#x5C06;View&#x8FD4;&#x56DE;&#x4E86;&#x3002;</span></p>
+<p><span style="font-size: 16px;">&#x6574;&#x4E2A;&#x5206;&#x6790;&#x5230;&#x6B64;&#x7ED3;&#x675F;&#x3002;</span></p>
+<p>&#xA0;</p>

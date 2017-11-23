@@ -1,0 +1,59 @@
+<p>&#x5728;&#x8FD9;&#x4E00;&#x8282;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x4ECB;&#x7ECD;TypeScript&#x4E2D;&#x7684;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x3002;&#x6211;&#x4EEC;&#x5C06;&#x4F1A;&#x8BA8;&#x8BBA;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x9700;&#x8981;&#x5728;&#x4F55;&#x5904;&#x7528;&#x5230;&#x4EE5;&#x53CA;&#x5982;&#x4F55;&#x63A8;&#x65AD;&#x3002;</p>
+<p><span style="font-size: 16px;"><strong>&#x57FA;&#x7840;</strong></span></p>
+<p>&#x5728;TypeScript&#x4E2D;&#xFF0C;&#x5728;&#x51E0;&#x4E2A;&#x6CA1;&#x6709;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x6CE8;&#x91CA;&#x7684;&#x5730;&#x65B9;&#x5C06;&#x4F1A;&#x4F7F;&#x7528;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x6765;&#x63D0;&#x4F9B;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#x3002;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> x = 3;</pre>
+</div>
+<p>&#x53D8;&#x91CF;&quot;x&quot;&#x7684;&#x503C;&#x88AB;&#x63A8;&#x65AD;&#x4E3A;number&#x3002;&#x8FD9;&#x79CD;&#x63A8;&#x65AD;&#x53D1;&#x751F;&#x5728;&#x53D8;&#x91CF;&#x6216;&#x8005;&#x6210;&#x5458;&#x521D;&#x59CB;&#x5316;&#x3001;&#x8BBE;&#x7F6E;&#x53C2;&#x6570;&#x9ED8;&#x8BA4;&#x503C;&#x3001;&#x51B3;&#x5B9A;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#x3002;</p>
+<p><span style="font-size: 16px;"><strong>&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;</strong></span></p>
+<p>&#x5F53;&#x9700;&#x8981;&#x4ECE;&#x591A;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4E2D;&#x8FDB;&#x884C;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x4E9B;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7C7B;&#x578B;&#x5C06;&#x4F1A;&#x7528;&#x6765;&#x63A8;&#x65AD;&#x51FA;&#x4E00;&#x4E2A;&quot;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&quot;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> x = [0, 1, <span style="color: #0000ff;">null</span>];</pre>
+</div>
+<p>&#x8981;&#x60F3;&#x63A8;&#x65AD;&#x51FA;&#x4EC0;&#x4E48;&#x4F8B;&#x5B50;&#x4E2D;&quot;x&quot;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8003;&#x8651;&#x6BCF;&#x4E2A;&#x6570;&#x7EC4;&#x5143;&#x7D20;&#x7684;&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;&#x51FA;&#x4E86;&#x4E24;&#x4E2A;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x9009;&#x62E9;&#xFF1A;number&#x548C;null&#x3002;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x7B97;&#x6CD5;&#x8981;&#x6C42;&#x8003;&#x8651;&#x5230;&#x6240;&#x6709;&#x5019;&#x9009;&#x7684;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x9009;&#x62E9;&#x51FA;&#x4E0E;&#x6240;&#x6709;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x517C;&#x5BB9;&#x7684;&#x7C7B;&#x578B;&#x3002;(&#x8FD9;&#x91CC;&#x7684;&#x7C7B;&#x578B;&#x53EF;&#x4E3A;Array&lt;number&gt;)</p>
+<p>&#x7531;&#x4E8E;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x662F;&#x4ECE;&#x63D0;&#x4F9B;&#x7684;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x4E2D;&#x9009;&#x62E9;&#x7684;&#xFF0C;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x5171;&#x4EAB;&#x4E00;&#x4E2A;&#x5171;&#x540C;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x662F;&#x6240;&#x6709;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x7684;&#x7236;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #000000;">class Animal {
+    name:string;
+    constructor(theName: string) { </span><span style="color: #0000ff;">this</span>.name =<span style="color: #000000;"> theName; }
+}
+class Snake extends Animal{
+    constructor(name: string) { super(name); }
+}
+class Elephant extends Animal{
+    constructor(name: string) { super(name); }
+}
+class Rhino extends Animal {
+    constructor(name: string) { super(name); }
+}
+</span><span style="color: #0000ff;">var</span> zoo = [<span style="color: #0000ff;">new</span> Rhino(), <span style="color: #0000ff;">new</span> Elephant(), <span style="color: #0000ff;">new</span> Snake()]; <span style="color: #008000;">//</span><span style="color: #008000;"> &#x8FD9;&#x91CC;&#x4E09;&#x4E2A;&#x6210;&#x5458;&#x7684;&#x7C7B;&#x578B;&#x5206;&#x522B;&#x4E3A;&#xFF1A;Rhino&#x3001;Elephant&#x3001;Snake  &#x4ED6;&#x4EEC;&#x662F;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x7684;&#x5019;&#x9009;&#x7C7B;&#x578B;&#xFF0C;Animal&#x662F;&#x4ED6;&#x4EEC;&#x7684;super type(&#x8BD1;&#x4E3A;&#x7236;&#x7C7B;&#x578B;)</span></pre>
+</div>
+<p>&#x7406;&#x60F3;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x5E0C;&#x671B;zoo&#x88AB;&#x63A8;&#x65AD;&#x4E3A;Animal[]&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;&#x6570;&#x7EC4;&#x4E2D;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;&#x662F;&#x4E25;&#x683C;&#x7684;Animal&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x4E0D;&#x80FD;&#x505A;&#x51FA;&#x63A8;&#x65AD;&#x3002;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5F53;&#x4E0D;&#x80FD;&#x63A8;&#x65AD;&#x51FA;&#x6240;&#x6709;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x7684;&#x7236;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x660E;&#x786E;&#x7684;&#x63D0;&#x4F9B;&#x7C7B;&#x578B;&#x3002;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">var</span> zoo: Animal[] = [<span style="color: #0000ff;">new</span> Rhino(), <span style="color: #0000ff;">new</span> Elephant(), <span style="color: #0000ff;">new</span> Snake()];</pre>
+</div>
+<p>&#x5F53;&#x6CA1;&#x6709;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x63A8;&#x65AD;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x7A7A;&#x5BF9;&#x8C61;&#xFF0C;{}&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x7C7B;&#x578B;&#x4E0D;&#x542B;&#x4EFB;&#x4F55;&#x6210;&#x5458;&#xFF0C;&#x5BF9;&#x4E8E;&#x5176;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#x7684;&#x8BBF;&#x95EE;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x9519;&#x8BEF;&#x3002;&#x8FD9;&#x79CD;&#x7ED3;&#x679C;&#x4F9D;&#x7136;&#x5141;&#x8BB8;&#x6211;&#x4EEC;&#x5728;&#x5FFD;&#x7565;&#x7C7B;&#x578B;&#x7684;&#x65B9;&#x5F0F;&#x4E2D;&#x4F7F;&#x7528;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x5728;&#x4FDD;&#x969C;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x80FD;&#x88AB;&#x9690;&#x5F0F;&#x7684;&#x786E;&#x5B9A;&#x3002;</p>
+<p><span style="font-size: 16px;"><strong>&#x4E0A;&#x4E0B;&#x6587;(&#x8BED;&#x5883;)&#x7C7B;&#x578B;</strong></span></p>
+<p>&#x5728;TypeScript&#x4E2D;&#xFF0C;&#x7C7B;&#x578B;&#x63A8;&#x65AD;&#x5728;&#x67D0;&#x4E9B;&#x60C5;&#x51B5;&#x4E0B;&#x4E5F;&#x5B58;&#x5728;&#x4E8E;&quot;&#x5176;&#x4ED6;&#x65B9;&#x9762;&quot;&#x3002;&#x8FD9;&#x88AB;&#x79F0;&#x4E3A;&quot;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&quot;&#x3002;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x53D1;&#x751F;&#x5728;&#x5F53;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x7C7B;&#x578B;&#x5728;&#x5176;&#x6240;&#x5728;&#x7684;&#x4E0A;&#x4E0B;&#x6587;&#x4E2D;&#x88AB;&#x9690;&#x5F0F;&#x7684;&#x6307;&#x5B9A;&#x7684;&#x65F6;&#x5019;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<div class="cnblogs_code">
+<pre>window.onmousedown = <span style="color: #0000ff;">function</span><span style="color: #000000;">(mouseEvent) { 
+    console.log(mouseEvent.buton);  </span><span style="color: #008000;">//</span><span style="color: #008000;">&lt;- &#x7F16;&#x8BD1;&#x65F6;&#x629B;&#x51FA;&#x9519;&#x8BEF;  </span>
+};</pre>
+</div>
+<p>&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x5C06;&#x4F1A;&#x7ED9;&#x51FA;&#x4E00;&#x4E2A;&#x7C7B;&#x578B;&#x9519;&#x8BEF;&#xFF0C;TypeScript&#x7684;&#x7C7B;&#x578B;&#x68C0;&#x67E5;&#x5668;&#x4F7F;&#x7528;Window.onmousedown&#x51FD;&#x6570;&#x7684;&#x7C7B;&#x578B;&#x6765;&#x63A8;&#x65AD;&#x53F3;&#x8FB9;&#x7684;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x7C7B;&#x578B;&#x3002;&#x5F53;&#x5B83;&#x8FD9;&#x4E48;&#x505A;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4FBF;&#x80FD;&#x591F;&#x63A8;&#x65AD;&#x51FA;&#x53C2;&#x6570;mouseEvent&#x7684;&#x7C7B;&#x578B;&#x3002; &#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x4E0D;&#x5728;&#x53EF;&#x8FDB;&#x884C;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;mouseEvent &#x9700;&#x8981;&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;any&#x7C7B;&#x578B;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#x4E86;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x9700;&#x8981;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x5185;&#x5BB9;&#x4E2D;&#x5305;&#x542B;&#x660E;&#x786E;&#x7684;&#x7C7B;&#x578B;&#x4FE1;&#x606F;&#xFF0C;&#x5219;&#x4F1A;&#x5FFD;&#x7565;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x3002;&#x6211;&#x4EEC;&#x91CD;&#x5199;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<div class="cnblogs_code">
+<pre>window.onmousedown = <span style="color: #0000ff;">function</span><span style="color: #000000;">(mouseEvent: any) { 
+    console.log(mouseEvent.buton);  </span><span style="color: #008000;">//</span><span style="color: #008000;">&lt;- &#x73B0;&#x5728;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x4E86; </span>
+};</pre>
+</div>
+<p>&#x53C2;&#x6570;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x51FD;&#x6570;&#x8868;&#x8FBE;&#x5F0F;&#x5C06;&#x4F1A;&#x5FFD;&#x7565;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x3002;&#x7ECF;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5904;&#x7406;&#x5C31;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x5E94;&#x7528;&#x5230;&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x3002;</p>
+<p>&#x4E0A;&#x4E0B;&#x6587;&#x5F52;&#x7C7B;&#x53EF;&#x5E94;&#x7528;&#x4E8E;&#x8BB8;&#x591A;&#x573A;&#x666F;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x573A;&#x666F;&#x5305;&#x62EC;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x53C2;&#x6570;&#x3001;&#x8D4B;&#x503C;&#x7684;&#x7B49;&#x53F7;&#x53F3;&#x8FB9;&#x8868;&#x8FBE;&#x5F0F;&#x3001;&#x7C7B;&#x578B;&#x786E;&#x5B9A;&#x3001;&#x5BF9;&#x8C61;&#x6210;&#x5458;&#x548C;&#x6570;&#x7EC4;&#x5B57;&#x9762;&#x91CF;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x8BED;&#x53E5;&#x3002;&#x4E0A;&#x4E0B;&#x6587;&#x7C7B;&#x578B;&#x4E5F;&#x4F5C;&#x4E3A;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x7684;&#x5019;&#x9009;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF1A;</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> createZoo(): Animal[] {
+    </span><span style="color: #0000ff;">return</span> [<span style="color: #0000ff;">new</span> Rhino(), <span style="color: #0000ff;">new</span> Elephant(), <span style="color: #0000ff;">new</span><span style="color: #000000;"> Snake()];
+}</span></pre>
+</div>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x6709;&#x56DB;&#x4E2A;&#x5019;&#x9009;&#x7C7B;&#x578B;&#xFF1A;Animal,Rhino,Elephant,&#x548C;Snake&#x3002;&#x5176;&#x4E2D;&#xFF0C;Animal&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6700;&#x4F73;&#x516C;&#x5171;&#x7C7B;&#x578B;&#x3002;</p>
+<p>&#x5F62;&#x5F0F;&#x6709;&#x70B9;&#x50CF;&#x6570;&#x5B66;&#x4E2D;&#x7684;&#x6C42;&#x6700;&#x5C0F;&#x516C;&#x500D;&#x6570;...</p>
+<p>&#xA0;</p>
