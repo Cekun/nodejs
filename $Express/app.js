@@ -11,6 +11,8 @@ app.set('view engine','ejs');
 
 app.get('/', router.showIndex);
 app.get('/:albumName', router.showAlbum);
+app.get('/up', router.showUpload);
+app.post('/up', router.doPost);
 
 //404
 app.use((req,res) => {

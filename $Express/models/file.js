@@ -47,13 +47,12 @@ exports.getAblumByName = function(albumName, callback){
             var images = [];
             (function iterator(i){
                   if(files.length == i){
-                        console.log(images);
                         callback(null, images);
                         return;
                   }
                   fs.stat('./uploads/' + albumName+ '/' + files[i], (err, stats) => {
                         if(err){
-                              callback("+1" + files[i], null);
+                              callback(files[i], null);
                               return;
                         }
                         if(stats.isFile()){

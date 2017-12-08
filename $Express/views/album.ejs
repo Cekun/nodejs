@@ -25,7 +25,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">相册 <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">上传</a></li>
+        <li><a href="/up">上传</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -39,8 +39,8 @@
 <div class="Container">
       <div class="row">
             <% for(var i = 0; i < images.length; i++){ %>
-                  <div class="col-xs-6 col-md-3">
-                    <a href="#" class="thumbnail">
+                  <div class="col-xs-6 col-md-4">
+                    <a href="/<%= ablumName%>/<%= images[i] %>" class="thumbnail">
                       <img src="<%= images[i] %>" alt="...">
                     </a>
                   </div>
