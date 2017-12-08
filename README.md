@@ -117,5 +117,5 @@ app.use('/admin', (req, res) => {
 + ~如果想使用不同的`Content-type`，可以：`res.set('Content-type,'text/html')`~
 
 ### 3.Get请求和Post请求的参数
-# Get请求的参数在URL里，在原生Node中，需要使用url模块来识别参数字符串，在Express中，不需要使用url模块了，直接使用`req.query`对象。[样列](./$Express/03.js)
-# Post请求在Express中不能直接获得，需要使用`body-parser`模块，使用后可以使用`req.body`得到参数，但是表单中含有文件上传，那么还是需要使用formidable模块。[样列](./$Express/04.js)
++ Get请求的参数在URL里，在原生Node中，需要使用url模块来识别参数字符串，在Express中，不需要使用url模块了，直接使用`req.query`对象。[样列](./$Express/03.js)
++ Post请求在Express中不能直接获得，需要使用`body-parser`模块，使用后可以使用`req.body`得到参数，但是表单中含有文件上传，那么还是需要使用formidable模块。[样列](./$Express/04.js)
