@@ -1,4 +1,4 @@
-# Node服务器端开发
+# 一、Node服务器端开发
 
 > HTTP协议，http、url、querystring、模块、网络爬虫，创建文件服务器
 
@@ -120,4 +120,37 @@ app.use('/admin', (req, res) => {
 + Get请求的参数在URL里，在原生Node中，需要使用url模块来识别参数字符串，在Express中，不需要使用url模块了，直接使用`req.query`对象。[样列](./$Express/03.js)
 + Post请求在Express中不能直接获得，需要使用`body-parser`模块，使用后可以使用`req.body`得到参数，但是表单中含有文件上传，那么还是需要使用formidable模块。[样列](./$Express/04.js)
 
-# [MVC相册](./$Express/app.js)
+### [MVC相册](./$Express/app.js)
+
+#二、 NoSQL 数据库
+* NoSQL中最小的“数据条目”不是行，而是“文档”
+* 文档就是键值对的一个集合，实际上表达方式JOSN一样，相当于SQL中的表
+* 集合就是一组文档，相当于“表”，集合中可以存储不同类型的文档
+
+**NOSQL试用场景：**
+1. 数据模型比较简单
+2. 需要灵活性更强的IT系统
+3. 对数据库性能要求更高
+4. 不需要高度的数据一致性
+5. 对于给定的key，比较容易映射复杂值的环境
+
+#三、MongoDB
+
+MongoDB命令：
+      mongo使用数据库        mongod 开机         mongoimport  导入数据库
+开机命令
+      `mongod --dbpath c:/mongo`
+--dbpath 就是选择数据库文档所在的文件夹，也就是说，MongoDB中，真的有物理文件，对应一个个数据库。U盘可拷。一定要保持开机cmd不能关。所以应该再开一个cmd输入：`mongo`，那么运行换就就是mongo语法了。
+* 列出所有数据库：`show dbs`
+* 使用某个数据库：`use 数据库名字`。use不存在的就是新建
+      注意：如果真的想把数据库创建成功，那么必须插入一个数据
+* 查看当前所在数据库：db
+* 删除数据库      `db.dropDatabase`
+* 插入数据库
+      eg:  db.student.insert({"name": "yck", "age": 12, sex: "male"});
+      mongoimport --db 数据库名 --collection 集合名 --drop --file 文件名
+* 查找数据      `db.集合名.find(params?)`
+
+student 就是所谓的集合。集合中存储着很多json。db一个未知的集合名字，这个集合将自动创建
+
+`是谁烧了我的眉，又搅扰了谁的青春`
