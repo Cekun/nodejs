@@ -148,8 +148,10 @@ MongoDB命令：
 * 删除数据库      `db.dropDatabase`
 * 插入数据库
       eg:  db.student.insert({"name": "yck", "age": 12, sex: "male"});
-      mongoimport --db 数据库名 --collection 集合名 --drop --file 文件名
-* 查找数据      `db.集合名.find(params?)`
+* 导入数据库   `mongoimport --db 数据库名 --collection 集合名 --drop --file 文件名`
+* 查找数据      `db.集合名.find(params?)`    [官方文档](https://docs.mongodb.com/manual/tutorial/query-documents/)
+* 修改数据      `db.集合名.update({},{})`    [官方文档](https://docs.mongodb.com/manual/tutorial/update-documents/)
+
 
 student 就是所谓的集合。集合中存储着很多json。db一个未知的集合名字，这个集合将自动创建
 
